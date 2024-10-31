@@ -1,12 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    
+    <h1 class="titolo">Biglietteria online</h1>
+    <div class="div_form">
+        <form action="gestioneacquisto.php" method="get">
+            <label for="nome">Nome:</label>
+            <br>
+            <input type="text" name="nome" placeholder="mario" required>
+            <br><br>
+            <label for="cognome">Cognome:</label>
+            <br>
+            <input type="text" name="cognome" placeholder="rossi" required>
+            <br><br>
+            <label for="codice_fiscale">Codice fiscale:</label>
+            <br>
+            <input type="text" name="codice_fiscale" placeholder="XXXXXXXXXXXXXXXX" required>
+            <br><br>
+            <label for="settore">Settore:</label>
+            <br>
+            <select name="settore">
+                <option value="curva">curva</option>
+                <option value="tribuna_centrale">tribuna centrale</option>
+                <option value="tribuna_donore">tribuna d'onore</option>
+            </select>
+            <br><br>
+            <label for="codice_sconto">Codice sconto(opzionale):</label>
+            <br>
+            <input type="text" name="codice_sconto" placeholder="xxxxxx">
+            <br><br>
+            <label for="biglietto_unico">Biglietto unico:</label>
+            <br>
+            <input type="radio" name="quantita" value="biglietto_unico" onclick="biglietto_unico()" checked>
+            <input type="radio" name="quantita" value="piu_biglietti" onclick="piu_biglietti()">
+            <div style="display: none;" id="quantita_biglietti_div">
+                <br><br>
+                div
+
+            </div>
+            <br>
+            <input type="submit" name="fatto">
+        </form>
+    </div>
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
+
+<!--
+Deve inoltre essere presente un gruppo di radio button che specifica se si acquista solo un biglietto o si acquistano biglietti anche per altre persone.
+Di default è selezionato il radio button "Biglietto unico".
+
+Se si seleziona il radio button "Più biglietti" allora comparirà un div (inizialmente nascosto) contenente:
+- una casella di testo per il codice fiscale della persona aggiuntiva.
+- un input type number con valore di default 1.
+- 2 button che permettono di aggiungere/rimuovere il numero di biglietti aggiuntivi (e quindi le caselle di testo con i codici fiscale). Il minimo è 1 ed il massimo è 4.
+
+Se poi si riseleziona il radio buton "Biglietto unico" allora il div deve scomparire.
+Alla ricomparsa, ripartirà con 1 sola casella di testo vuota. -->
