@@ -40,9 +40,26 @@
             <br>
             <input type="radio" name="quantita" value="biglietto_unico" onclick="biglietto_unico()" checked>
             <input type="radio" name="quantita" value="piu_biglietti" onclick="piu_biglietti()">
-            <div style="display: none;" id="quantita_biglietti_div">
+            <div style="display: none; " id="quantita_biglietti_div">
                 <br><br>
-                div
+                <label for="codice_fiscale2">Codici fiscali aggiuntivi:</label>
+                <br><br>
+
+                <input style="display: block; margin-left: auto; margin-right: auto;" type="text" name="codice_fiscale2"
+                    placeholder="XXXXXXXXXXXXXXXX" id="cf1">
+                <input style="display: none; margin-left: auto; margin-right: auto;" type="text" name="codice_fiscale3"
+                    placeholder="XXXXXXXXXXXXXXXX" id="cf2">
+                <input style="display: none; margin-left: auto; margin-right: auto;" type="text" name="codice_fiscale4"
+                    placeholder="XXXXXXXXXXXXXXXX" id="cf3">
+                <input style="display: none; margin-left: auto; margin-right: auto;" type="text" name="codice_fiscale5"
+                    placeholder="XXXXXXXXXXXXXXXX" id="cf4">
+                <br><br>
+
+
+                <input style="width: 15%;" type="number" id="numero_codici_fiscali" name="numero_codici_fiscali"
+                    readonly value="1">
+                <button type="button" onclick="aggiungi_codice_fiscale()">+</button>
+                <button type="button" onclick="rimuovi_codice_fiscale()">-</button>
 
             </div>
             <br>
